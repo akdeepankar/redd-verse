@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta charset="UTF-8" />
+  <title>Game-like UI</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body background="images/home.png" style="background-size: cover; background-repeat: no-repeat; background-attachment: fixed;">
+
+  <!-- Header Section -->
+  <header>
+    <div class="tabs">
+      <div class="tab active" data-tab="fetch-comment" style="font-size: small;">Haiku</div>
+      <div class="tab" data-tab="game-tab" style="font-size: small;">Haiku Weaver</div> <!-- Added Game Tab -->
+      <div class="tab" data-tab="describe-user" style="font-size: small;">My Reddit Persona</div>
+    </div>
+  </header>
+
+  <!-- Fetch Comment Tab -->
+  <div class="tab-content active" id="fetch-comment">
+    <div style="display: flex; margin-bottom: 10px; background-color: #ffffffee; padding: 5px; border-radius: 10px; gap: 30px;">
+      <pre style="font-size: large; background-color: transparent; box-shadow: none; margin-top: 5px; text-align: left; margin-left: 0; padding: 0;">
+        🌸 Join Snoo in the adventure <br> by transforming your last Reddit <br> comment into a haiku. 🌸
+      </pre>
+            <div> 
+        <pre style="font-size: large; background-color: transparent; box-shadow: none; margin: 2px; margin-top: 5px;">🎖️ Most Scored Haiku 🔽</pre>
+        <pre style="background-color: white; font-size: larger; margin-bottom: 12px;  color: #121212; padding: 8px; border-radius: 8px; box-shadow: 2px 3px 4px 6px rgba(0, 0, 0, 0.1);" id="topScoreComment"></pre>
+      </div>
+    </div>
+
+
+  <div style="background-color: #ffffffee; padding: 10px; border-radius: 10px;">
+      <pre style="font-size: larger; background-color: transparent; box-shadow: none; margin: 0;">Customize your Haiku 🔽</pre>
+
+    <div style="display: flex; align-items: center; gap: 10px; margin: 5px;">
+      <div class="mood-tone-container" style="display: flex; gap: 10px;">
+        <label><input type="radio" name="moodTone" value="poetic" checked /> Poetic</label>
+        <label><input type="radio" name="moodTone" value="sarcastic" /> Sarcastic</label>
+        <label><input type="radio" name="moodTone" value="shakespearean" /> Shakespearean</label>
+        <label><input type="radio" name="moodTone" value="futuristic" /> Futuristic</label>
+      </div>
+      <button id="btn-fetch-comment" style="margin: 5px;">Generate Haiku</button>
+    </div> 
+      <div style="display: flex; justify-content: space-between; gap: 20px;">
+      <div style="flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 8px;  background-color: #ffffffce;">
+        <pre style="font-size: larger; margin: 0">Your Last Comment🔽</pre>
+        <pre id="commentOutput">No comment fetched yet.</pre>
+      </div>
+      <div style="flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 8px; background-color: #ffffffce;">
+        <pre style="font-size: larger; margin: 0">Haiku 🔽</pre>
+        <pre id="summaryOutput"></pre>
+      </div>
+    </div>
+
+    <div class="button-container">
+      <button id="btn-share-comment" style="display: none;">Share Haiku in Comment</button>
+    </div>
+    </div>
+
+    
+  </div>
+
+  <!-- Describe User Tab -->
+  <div class="tab-content" id="describe-user" style=" background-color: #ffffffee; padding: 10px; border-radius: 10px; ">
+    <img id="userImageOutput" style="display: none; width: 200px; height: 200px; border-radius: 20px;" alt="User Persona Image" />
+    <h3 id="descriptionOutput"></h3>
+    <pre style=" font-size: large; ">Your Reddit Persona is Defined by your Last 5 Comments.</pre>
+    <div class="button-container">
+      <button id="btn-describe-user">My Reddit Persona</button>
+    </div>
+  </div>
+
+<!-- Word Game Tab -->
+<div class="tab-content" id="game-tab" style="display: none; background-color: #ffffffce; padding: 10px;">
+  <div class="header-bar" style="display: flex; justify-content: space-between; align-items: center; gap: 20px; margin-bottom: 20px;">
+    <div style="display: flex; gap: 10px;">
+       <div id="timerDisplay" style="font-size: 16px;">Time: 30s</div>
+       <div id="totalScore" style="font-size: 16px;">Score: 0</div>
+    </div>
+    <div id="correctness" style="font-size: 16px;">Correctness</div>
+  </div>
+  <div class="game-content">
+    <div id="levelQuestion"></div>
+    <button id="submitAnswer">Submit Answer</button>
+    <pre class="instructions">
+      Arrange the Haiku in Correct Order. <br />
+      These Haikus are Fetched from the Comment Section. <br />
+      Contribute by Generating your own Haiku from the Haiku Tab.
+    </pre>
+  </div>  
+</div>
+
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>

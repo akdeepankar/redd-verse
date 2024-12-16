@@ -1,0 +1,205 @@
+/* Import Poppins font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #121212;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Section */
+header {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px; /* Set the height of the header */
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h2 {
+  text-align: center;
+  padding: 20px;
+  background-color: #f0f0f0; /* Lighter background */
+  color: #121212; /* Dark text */
+  margin: 0;
+  border-radius: 10px 10px 0 0;
+}
+
+/* Tabs Styling */
+.tabs {
+  display: flex;
+  justify-content: center;
+  background-color: #f0f0f0; /* Light gray background */
+  border-radius: 25px;
+  border-bottom: 1px solid #ccc; /* Lighter border color */
+  padding: 5px;
+  margin: 2px;
+  gap: 10px; /* Added gap between the tabs */
+
+}
+
+.tab {
+  padding: 8px 20px;
+  background: linear-gradient(135deg, #1e90ff, #00bfff);
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.tab:hover {
+  transform: translateY(-2px);
+}
+
+.tab.active {
+  background: linear-gradient(135deg, #f02a2a, #f18080);
+  color:black;
+  font-weight: bold;
+}
+
+
+/* Tab Content */
+.tab-content {
+  display: none;
+  margin: 10px;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Centering Image in Describe User Tab */
+#describe-user {
+  text-align: center; /* Centers text and image horizontally */
+}
+
+#userImageOutput {
+  display: block; /* Ensures the image is displayed */
+  margin: 20px auto; /* Centers the image horizontally */
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
+}
+
+/* Button Container */
+.button-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+button {
+  padding: 8px 18px;
+  background-color: #3d3d3d; /* Dark button background */
+  color: #ffffff; /* White text */
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: small;
+}
+
+button:hover {
+  background-color: #4e4e4e; /* Darker button background on hover */
+  color: #ffffff;
+}
+
+/* Highlighted Button */
+#goToDescribe {
+  background-color: #ff6b6b; /* Red background for emphasis */
+  color: #ffffff;
+}
+
+#goToDescribe:hover {
+  background-color: #ff4a4a; /* Darker red on hover */
+}
+
+
+.game-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  flex-grow: 1;
+
+}
+
+.instructions {
+  font-size: larger;
+  margin-bottom: 20px;
+  line-height: 0.5; /* Improves readability */
+}
+
+#submitAnswer {
+  padding: 10px 20px;
+  margin-top: 20px; /* Adds spacing above the button */
+}
+
+
+/* Game Tab Styles */
+#game-tab {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#levelQuestion {
+  display: flex;
+  gap: 5px; /* Space between words */
+  flex-wrap: wrap; /* Allows wrapping to new lines */
+  justify-content: center; /* Centers the content */
+  align-items: center; /* Aligns items within each line */
+  width: 420px; /* Control the width to fit 3 lines for Haiku */
+  margin: 0 auto; /* Center the container on the page */
+}
+
+
+
+.word-box {
+  background-color: #c0dceb;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.word-box:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+#totalScore, #timerDisplay, #correctness {
+  font-size: 16px;
+  background-color: #1a0131;
+  color: white;
+  padding: 4px;
+  border-radius: 10px;
+  max-width: 150px;
+  margin-bottom: 4px;
+}
+
+#submitAnswer.shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  50% { transform: translateX(10px); }
+  75% { transform: translateX(-10px); }
+  100% { transform: translateX(0); }
+}
+
